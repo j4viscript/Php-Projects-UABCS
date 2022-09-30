@@ -20,7 +20,7 @@
 				<div class="row registro justify-content-md-center align-items-center">
 					
 					<div class="col-md-6 col-sm-12 p-3 border">
-						<form method="get" action="products">
+						<form method="post" action="app/AuthController.php">
 					
 							<h1 class="text-center">
 								Acceso al panel
@@ -38,7 +38,7 @@
 								  <span class="input-group-text" id="basic-addon1">
 								  	@
 								  </span>
-								  <input type="text" class="form-control" placeholder="Correo electrónico" aria-label="Username" aria-describedby="basic-addon1">
+								  <input name="email" type="text" class="form-control" placeholder="Correo electrónico" aria-label="Username" aria-describedby="basic-addon1" required>
 								</div>
 							</div>  
 								
@@ -50,12 +50,13 @@
 								  <span class="input-group-text" id="basic-addon1">
 								  	@
 								  </span>
-								  <input type="text" class="form-control" placeholder="* * * * * * *" aria-label="Username" aria-describedby="basic-addon1">
+								  <input name="password" type="text" class="form-control" placeholder="* * * * * * *" aria-label="Username" aria-describedby="basic-addon1" required>
 								</div>
 							</div> 
 							<button class="btn btn-primary col-12" type="submit">
 								acceder
 							</button>
+							<input type="hidden" name="action" value="access">
 						</form>
 					</div>
 				</div>
