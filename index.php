@@ -25,11 +25,6 @@
 							<h1 class="text-center">
 								Acceso al panel
 							</h1>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitat
-							</p>
 							<div class="mb-3">
 							   <label>
 									Correo electrónico
@@ -38,7 +33,7 @@
 								  <span class="input-group-text" id="basic-addon1">
 								  	@
 								  </span>
-								  <input name="email" type="text" class="form-control" placeholder="Correo electrónico" aria-label="Username" aria-describedby="basic-addon1" required>
+								  <input name="email" type="email" class="form-control" placeholder="Correo electrónico" aria-label="Username" aria-describedby="basic-addon1" required>
 								</div>
 							</div>  
 								

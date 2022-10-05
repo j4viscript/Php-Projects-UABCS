@@ -2,7 +2,7 @@
  include '../app/productsController.php';
 
  $productController = new ProductsController();
- $productControlle = $productController->getProducts();
+ $products = $productController->getProducts();
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,14 +45,14 @@
 							<?php 
 								if (isset($products) && count($products)):?>
 							<?php foreach ($products as $product):?>
+								
 							<div class="col-md-4 col-sm-12"> 
-
 								<div class="card mb-2">
 									<img src="<?= $product->cover?>" class="card-img-top" alt="...">
 									<div class="card-body">
 									<h5 class="card-title"><?= $product->name?></h5>
-									<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<h6 class="card-subtitle mb-2 text-muted">Descripcion</h6>
+									<p class="card-text"><?= $product->description?></p>
 
 									<div class="row">
 										<a data-bs-toggle="modal" data-bs-target="#addProductModal" href="#" class="btn btn-warning mb-1 col-6">
@@ -92,17 +92,30 @@
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 
-		      <form>
+		      <form method="post" action="../app/productsController.php">
 
-			      <div class="modal-body">
+			      <div class="modal-body" >
 			        
-			        <?php for ($i=0; $i < 6; $i++): ?>
 			        <div class="input-group mb-3">
-					  <span class="input-group-text" id="basic-addon1">@</span>
-					  <input required type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+					  <span class="input-group-text" id="basic-addon1">Nombre</span>
+					  <input name="name" required type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
 					</div>
-					<?php endfor; ?>
-
+			        <div class="input-group mb-3">
+					  <span class="input-group-text" id="basic-addon1">Descripción</span>
+					  <input name="description" required type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+					</div>
+			        <div class="input-group mb-3">
+					  <span class="input-group-text" id="basic-addon1">Slug</span>
+					  <input name="slug" required type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+					</div>
+			        <div class="input-group mb-3">
+					  <span class="input-group-text" id="basic-addon1">Features</span>
+					  <input name="Features" required type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+					</div>
+						<div class="input-group mb-3">
+						<span class="input-group-text" id="basic-addon1">Brand</span>
+						<input name="brand" required type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+						</div>
 			      </div>
 
 			      <div class="modal-footer">
@@ -113,7 +126,6 @@
 			        	Save changes
 			        </button>
 			      </div>
-
 		      </form>
 
 		    </div>
